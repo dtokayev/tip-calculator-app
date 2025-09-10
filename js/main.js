@@ -111,7 +111,7 @@ numPeopleField.addEventListener('input', e => {
   if (e.target.value === '') {
     peopleErrorText.textContent = 'Invalid input';
     numPeopleField.classList.add('error-field');
-  } else if (Number(e.target.value) < 0) {
+  } else if (Number(e.target.value) < 1) {
     peopleErrorText.textContent = 'Invalid input';
     numPeopleField.classList.add('error-field');
   } else {
