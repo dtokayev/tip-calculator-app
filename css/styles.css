@@ -60,26 +60,35 @@ h1 {
 }
 
 .num-input-container {
-  background-color: var(--grey-50);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .3em 1.2em;
   margin-bottom: 2em;
-  border-radius: 4px;
+  position: relative;
+}
+
+.num-input-container > img {
+  position: absolute;
+  left: 1.2em;
 }
 
 .num-input-container > input {
   text-align: right;
   border: none;
-  background: none;
+  background-color: var(--grey-50);
+  width: 100%;
+  padding: .3em .8em;
+  border-radius: 4px;
+}
+
+.num-input-container > input:focus {
+  outline: solid var(--green-400);
 }
 
 input[type="number"] {
   appearance: textfield;
   color: var(--green-900);
   font-size: 1.52em;
-  width: 50%;
 }
 
 fieldset {
