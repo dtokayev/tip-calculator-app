@@ -13,6 +13,8 @@ const tipErrorText = document.getElementById('tip-error');
 
 const resetButton = document.querySelector('.reset-button');
 
+const firstTip = document.querySelector('input[type="radio"]');
+
 function computeAmount() {
   const billBeforeTip = Number(billInputField.value);
   const selectedTipField = document.querySelector('input[type="radio"]:checked');
@@ -52,11 +54,16 @@ function reset() {
   peopleErrorText.textContent = '';
   numPeopleField.classList.remove('error-field');
 
+  firstTip.checked = true;
+
   computeAmount();
 }
 
 billInputField.addEventListener('input', (e) => {
-  if (Number(e.target.value) < 0) {
+  if (e.target.value === '') {
+    billErrorText.textContent = 'Invalid input';
+    billInputField.classList.add('error-field');
+  } else if (Number(e.target.value) < 0) {
     billErrorText.textContent = 'Invalid input';
     billInputField.classList.add('error-field');
   } else {
@@ -67,7 +74,10 @@ billInputField.addEventListener('input', (e) => {
 });
 
 customTipField.addEventListener('input', e => {
-  if (Number(e.target.value) < 0) {
+  if (e.target.value === '') {
+    tipErrorText.textContent = 'Invalid input';
+    customTipField.classList.add('error-field');
+  } else if (Number(e.target.value) < 0) {
     tipErrorText.textContent = 'Invalid input';
     customTipField.classList.add('error-field');
   } else {
@@ -79,15 +89,29 @@ customTipField.addEventListener('input', e => {
 
 customTipField.addEventListener('focus', e => {
   customTipRadio.checked = true;
-  computeAmount();
+  if (customTipField.value === '') {
+    tipErrorText.textContent = 'Invalid input';
+    customTipField.classList.add('error-field');
+  } else {
+    tipErrorText.textContent = '';
+    customTipField.classList.remove('error-field');
+    computeAmount();
+  }
 });
 
 tipButtons.forEach(btn => {
-  btn.addEventListener('change', computeAmount);
+  btn.addEventListener('change', e => {
+    tipErrorText.textContent = '';
+    customTipField.classList.remove('error-field');
+    computeAmount();
+  });
 });
 
 numPeopleField.addEventListener('input', e => {
-  if (Number(e.target.value) < 0) {
+  if (e.target.value === '') {
+    peopleErrorText.textContent = 'Invalid input';
+    numPeopleField.classList.add('error-field');
+  } else if (Number(e.target.value) < 0) {
     peopleErrorText.textContent = 'Invalid input';
     numPeopleField.classList.add('error-field');
   } else {

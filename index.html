@@ -16,83 +16,85 @@
   <main>
     <div class="container">
       <h1>SPLI<br/>TTER</h1>
-      <div class="card">
-        <div class="input-container">
-          <div class="label-error-container">
-            <label for="bill">Bill</label>
-            <span id="bill-error" class="error-text"></span>
-          </div>
-          <div class="num-input-container">
-            <img src="./images/icon-dollar.svg" alt="dollar icon">
-            <input id="bill" name="bill" type="number" placeholder="0">
-          </div>
-          <fieldset>
+      <form action="" method="post">
+        <div class="card">
+          <div class="input-container">
             <div class="label-error-container">
-              <legend>Select Tip %</legend>
-              <span id="tip-error" class="error-text"></span>
+              <label for="bill">Bill</label>
+              <span id="bill-error" class="error-text"></span>
             </div>
-            <div class="tip-container">
-              <div>
-                <input type="radio" id="five" name="tip" value="5" />
-                <label for="five" class="tip-button">
-                  <span>5%</span>
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="ten" name="tip" value="10" />
-                <label for="ten" class="tip-button">
-                  <span>10%</span>
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="fifteen" name="tip" value="15" />
-                <label for="fifteen" class="tip-button">
-                  15%
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="twentyfive" name="tip" value="20" />
-                <label for="twentyfive" class="tip-button">
-                  25%
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="fifty" name="tip" value="25" />
-                <label for="fifty" class="tip-button">
-                  50%
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="custom" name="tip" value="custom" />
-                <label for="custom" class="tip-button">
-                  <input id="custom-tip-field" type="number" placeholder="Custom">
-                </label>
-              </div>
+            <div class="num-input-container">
+              <img src="./images/icon-dollar.svg" alt="dollar icon">
+              <input id="bill" name="bill" type="number" placeholder="0">
             </div>
-          </fieldset>
-          <div class="label-error-container">
-            <label for="num-people">Number of People</label>
-            <span id="num-people-error" class="error-text"></span>
+            <fieldset>
+              <div class="label-error-container">
+                <legend>Select Tip %</legend>
+                <span id="tip-error" class="error-text"></span>
+              </div>
+              <div class="tip-container">
+                <div>
+                  <input type="radio" id="five" name="tip" value="5" />
+                  <label for="five" class="tip-button">
+                    <span>5%</span>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="ten" name="tip" value="10" />
+                  <label for="ten" class="tip-button">
+                    <span>10%</span>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="fifteen" name="tip" value="15" />
+                  <label for="fifteen" class="tip-button">
+                    15%
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="twentyfive" name="tip" value="20" />
+                  <label for="twentyfive" class="tip-button">
+                    25%
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="fifty" name="tip" value="25" />
+                  <label for="fifty" class="tip-button">
+                    50%
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="custom" name="tip" value="custom" />
+                  <label for="custom" class="tip-button">
+                    <input id="custom-tip-field" type="number" placeholder="Custom">
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="label-error-container">
+              <label for="num-people">Number of People</label>
+              <span id="num-people-error" class="error-text"></span>
+            </div>
+            <div class="num-input-container">
+              <img src="./images/icon-person.svg" alt="person icon">
+              <input id="num-people" name="num-people" type="number" placeholder="0">
+            </div>
           </div>
-          <div class="num-input-container">
-            <img src="./images/icon-person.svg" alt="person icon">
-            <input id="num-people" name="num-people" type="number" placeholder="0">
+          <div class="result-container">
+            <div class="result-amount">
+              <span class="result-text">Tip Amount</span>
+              <span class="per-person-text">/ person</span>
+              <span id="bill-total" class="money-text">$0.00</span>
+            </div>
+            <div class="result-amount">
+              <span class="result-text">Total</span>
+              <span class="per-person-text">/ person</span>
+              <span id="bill-per-person" class="money-text">$0.00</span>
+            </div>
+            <button type="button" class="reset-button">Reset</button>
           </div>
         </div>
-        <div class="result-container">
-          <div class="result-amount">
-            <span class="result-text">Tip Amount</span>
-            <span class="per-person-text">/ person</span>
-            <span id="bill-total" class="money-text">$0.00</span>
-          </div>
-          <div class="result-amount">
-            <span class="result-text">Total</span>
-            <span class="per-person-text">/ person</span>
-            <span id="bill-per-person" class="money-text">$0.00</span>
-          </div>
-          <button type="button" class="reset-button">Reset</button>
-        </div>
-      </div>
+      </form>
     </div>
   </main>
   <footer>
