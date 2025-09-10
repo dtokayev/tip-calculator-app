@@ -11,6 +11,8 @@ const customTipRadio = document.getElementById('custom');
 const customTipField = document.getElementById('custom-tip-field');
 const tipErrorText = document.getElementById('tip-error');
 
+const resetButton = document.querySelector('.reset-button');
+
 function computeAmount() {
   const billBeforeTip = Number(billInputField.value);
   const selectedTipField = document.querySelector('input[type="radio"]:checked');
@@ -35,6 +37,22 @@ function computeAmount() {
 
   totalBillText.textContent = '$' + tipAmount.toFixed(2);
   perPersonBillText.textContent = '$' + billPerPerson.toFixed(2);
+}
+
+function reset() {
+  billInputField.value = '';
+  billErrorText.textContent = '';
+  billInputField.classList.remove('error-field');
+
+  customTipField.value = '';
+  tipErrorText.textContent = '';
+  customTipField.classList.remove('error-field');
+
+  numPeopleField.value = '';
+  peopleErrorText.textContent = '';
+  numPeopleField.classList.remove('error-field');
+
+  computeAmount();
 }
 
 billInputField.addEventListener('input', (e) => {
@@ -78,3 +96,7 @@ numPeopleField.addEventListener('input', e => {
     computeAmount();
   }
 });
+
+resetButton.addEventListener('click', reset);
+
+reset();
