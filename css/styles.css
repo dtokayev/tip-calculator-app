@@ -147,6 +147,11 @@ input[type="radio"]:checked + label {
   color: var(--green-900);
 }
 
+#custom:checked + label {
+  background: none;
+  color: var(--green-900);
+}
+
 .tip-button {
   display: flex;
   align-items: center;
