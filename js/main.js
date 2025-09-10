@@ -1,12 +1,15 @@
 const billInputField = document.getElementById('bill');
+const billErrorText = document.getElementById('bill-error');
 const totalBillText = document.getElementById('bill-total');
 const perPersonBillText = document.getElementById('bill-per-person');
 
 const numPeopleField = document.getElementById('num-people');
+const peopleErrorText = document.getElementById('num-people-error');
 
 const tipButtons = document.querySelectorAll('input[type="radio"]');
 const customTipRadio = document.getElementById('custom');
 const customTipField = document.getElementById('custom-tip-field');
+const tipErrorText = document.getElementById('tip-error');
 
 function computeAmount() {
   const billBeforeTip = Number(billInputField.value);
@@ -26,14 +29,34 @@ function computeAmount() {
   }
   const billPerPerson = billAfterTip / numPeople;
 
+  if (tipAmount < 0 || billPerPerson < 0) {
+    return;
+  }
+
   totalBillText.textContent = '$' + tipAmount.toFixed(2);
   perPersonBillText.textContent = '$' + billPerPerson.toFixed(2);
 }
 
-billInputField.addEventListener('input', computeAmount);
-numPeopleField.addEventListener('input', computeAmount);
-tipButtons.forEach(btn => {
-  btn.addEventListener('change', computeAmount);
+billInputField.addEventListener('input', (e) => {
+  if (Number(e.target.value) < 0) {
+    billErrorText.textContent = 'Invalid input';
+    billInputField.classList.add('error-field');
+  } else {
+    billErrorText.textContent = '';
+    billInputField.classList.remove('error-field');
+    computeAmount();
+  }
+});
+
+customTipField.addEventListener('input', e => {
+  if (Number(e.target.value) < 0) {
+    tipErrorText.textContent = 'Invalid input';
+    customTipField.classList.add('error-field');
+  } else {
+    tipErrorText.textContent = '';
+    customTipField.classList.remove('error-field');
+    computeAmount();
+  }
 });
 
 customTipField.addEventListener('focus', e => {
@@ -41,4 +64,17 @@ customTipField.addEventListener('focus', e => {
   computeAmount();
 });
 
-customTipField.addEventListener('input', computeAmount);
+tipButtons.forEach(btn => {
+  btn.addEventListener('change', computeAmount);
+});
+
+numPeopleField.addEventListener('input', e => {
+  if (Number(e.target.value) < 0) {
+    peopleErrorText.textContent = 'Invalid input';
+    numPeopleField.classList.add('error-field');
+  } else {
+    peopleErrorText.textContent = '';
+    numPeopleField.classList.remove('error-field');
+    computeAmount();
+  }
+});

@@ -55,7 +55,13 @@ h1 {
   padding: .5em;
 }
 
-.input-container > label {
+.label-error-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.label-error-container > label {
   color: var(--grey-500);
   margin-bottom: .3em;
   display: inline-block;
@@ -217,6 +223,26 @@ label[for="custom"] {
 
 .reset-button:hover {
   background-color: var(--grey-200);
+}
+
+.error-text {
+  color: red;
+}
+
+.error-field {
+  outline: solid red !important;
+}
+
+#bill-error {
+  margin-bottom: .3em;
+}
+
+#tip-error {
+  margin-bottom: 1em;
+}
+
+#num-people-error {
+  margin-bottom: .3em;
 }
 
 @media only screen and (min-width: 700px) {
