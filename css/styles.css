@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+}
+
+main, input, button {
+  font-family: monospace;
+  font-weight: 700;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.container {
+  background-color: #c5e4e7;
+  padding-top: 2em;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 1em 0;
+  color: #3f6868;
+  letter-spacing: .5em;
+}
+
+.card {
+  background-color: white;
+  border-radius: 24px 24px 0 0;
+  padding: 1.5em;
+}
+
+.input-container {
+  padding: 1em;
+}
+
+.input-container > label {
+  color: #597173;
+  margin-bottom: 1em;
+  display: inline-block;
+}
+
+.num-input-container {
+  background-color: #f3f8fb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.num-input-container > input {
+  text-align: right;
+  border: none;
+  background: none;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  color: #00474b;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0 0 1em 0;
+  border: none;
+}
+
+legend {
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+.tip-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.tip-container > div {
+  position: relative;
+}
+
+input[type="radio"] {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+input[type="radio"] + label {
+  background: #00474b;
+  color: white;
+  border-radius: 8px;
+}
+
+input[type="radio"]:checked + label {
+  background: #26c2ad;
+  color: #00474b;
+}
+
+.tip-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5em;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+}
+
+.result-container {
+  background-color: #00474b;
+  padding: 3em 1.5em 1.5em 1.5em;
+  border-radius: 12px;
+}
+
+.result-amount {
+  display: grid;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.result-amount > span:nth-child(3) {
+  grid-area: 1 / 2 / 3 / 3;
+  align-self: center;
+}
+
+.result-text {
+  color: white;
+}
+
+.per-person-text {
+  color: #749698;
+}
+
+.money-text {
+  color: #26c2ad;
+}
+
+.reset-button {
+  width: 100%;
+  background-color: #26c2ad;
+  color: #00474b;
+  border: none;
+  border-radius: 8px;
+  padding: 1em;
+}
