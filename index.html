@@ -19,24 +19,68 @@
       <div class="card">
         <div class="input-container">
           <label for="bill">Bill</label>
-          <input id="bill" name="bill" type="number" placeholder="0">
-          <label for="tip">Select Tip %</label>
-          <button type="button">5%</button>
-          <button type="button">10%</button>
-          <button type="button">15%</button>
-          <button type="button">25%</button>
-          <button type="button">50%</button>
-          <input type="number" placeholder="Custom">
+          <div class="num-input-container">
+            <img src="./images/icon-dollar.svg" alt="dollar icon">
+            <input id="bill" name="bill" type="number" placeholder="0">
+          </div>
+          <fieldset>
+            <legend>Select Tip%</legend>
+            <div class="tip-container">
+              <div>
+                <input type="radio" id="five" name="tip" />
+                <label for="five" class="tip-button">
+                  <span>5%</span>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="ten" name="tip" />
+                <label for="ten" class="tip-button">
+                  <span>10%</span>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="fifteen" name="tip" />
+                <label for="fifteen" class="tip-button">
+                  15%
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="twentyfive" name="tip" />
+                <label for="twentyfive" class="tip-button">
+                  25%
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="fifty" name="tip" />
+                <label for="fifty" class="tip-button">
+                  50%
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="custom" name="tip" />
+                <label for="custom" class="tip-button">
+                  Custom
+                </label>
+              </div>
+            </div>
+          </fieldset>
           <label for="num-people">Number of People</label>
-          <input id="num-people" name="num-people" type="number" placeholder="0">
+          <div class="num-input-container">
+            <img src="./images/icon-person.svg" alt="person icon">
+            <input id="num-people" name="num-people" type="number" placeholder="0">
+          </div>
         </div>
         <div class="result-container">
-          <span>Tip Amount</span>
-          <span>/ person</span>
-          <span>$0.00</span>
-          <span>Total</span>
-          <span>/ person</span>
-          <span>$0.00</span>
+          <div class="result-amount">
+            <span class="result-text">Tip Amount</span>
+            <span class="per-person-text">/ person</span>
+            <span class="money-text">$0.00</span>
+          </div>
+          <div class="result-amount">
+            <span class="result-text">Total</span>
+            <span class="per-person-text">/ person</span>
+            <span class="money-text">$0.00</span>
+          </div>
           <button type="button" class="reset-button">Reset</button>
         </div>
       </div>
