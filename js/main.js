@@ -31,13 +31,14 @@ function computeAmount() {
   if (numPeople < 1) {
     numPeople = 1;
   }
+  const tipPerPerson = tipAmount / numPeople;
   const billPerPerson = billAfterTip / numPeople;
 
-  if (tipAmount < 0 || billPerPerson < 0) {
+  if (tipPerPerson < 0 || billPerPerson < 0) {
     return;
   }
 
-  totalBillText.textContent = '$' + tipAmount.toFixed(2);
+  totalBillText.textContent = '$' + tipPerPerson.toFixed(2);
   perPersonBillText.textContent = '$' + billPerPerson.toFixed(2);
 }
 
